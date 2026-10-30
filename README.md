@@ -41,10 +41,10 @@ During CSV ingestion via `csv.DictReader`, every data point undergoes rigorous c
 ### 3. Outlier Detection
 * **Choice:** **Interquartile Range (IQR) Fence Method** with a default multiplier of $k = 1.5$.
 * **Definition:** 
-  $$\text{IQR} = Q_3 - Q_1$$
-  $$\text{Lower Fence} = Q_1 - 1.5 \times \text{IQR}$$
-  $$\text{Upper Fence} = Q_3 + 1.5 \times \text{IQR}$$
-  Any data point falling outside these fences is flagged as an outlier.
+  ```text
+  IQR = Q3 - Q1
+  Lower Fence = Q1 - 1.5 * IQR
+  Upper Fence = Q3 + 1.5 * IQR
 
 ### 4. Assumptions
 * Input files follow a comma-separated values (CSV) format with a structured header row.
